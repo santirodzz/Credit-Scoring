@@ -32,3 +32,10 @@ Oversampling: The dataset is clearly inbalance, with defaults representing aroun
 Hyperparameter tuning: The logistic regression model in Python includes a parameter "C", which is a form of regularization. After testing for many values of C using gridsearch cross validation, the model seemed to favor higher values of C, meaning a model that overall is more likely to generalize future data, which is not a desirable feature in a model that aims to estimate default probabilities. Therefore, the default value of C=1.0 was chose instead. 
 
 # Model validation
+After training and testing the logistic regression model, a few indicators were taken into account to determine the results provided by the model were satisfactory:
+
+AUC ROC score: 0.88, indicating that the model is good at identifying correctly defaults vs non defaults.
+
+F1 weighted score: F1 score is preferred in this example since the aim of the model is not to have overall correct estimates (such model would simply classify all customers as non defaults), but to minimize default customers being classified as non-defaults, also known as a false negative, a score of 0.79 is a good sign that the model is working correctly.
+
+New data: To test model coherence, data on imaginary customers was generated, the new customer data was passed to the model, ranking them from high to low default probability. The ranking was deemed as reasonable by the business as they mostly classified them in the same way (from less risky to more risky).
