@@ -1,7 +1,7 @@
 # Credit-Scoring
 Risk based pricing model which employs a machine learning algorithm that estimates default probability by using five features. Then, taking into account the cost of funds, default premium, operative costs and a profit margin it calculates the interest rate to be charged to the loan.
 
-# File desccription
+# File description
 Risk_based_pricing.py: A python file which contains all the code regarding data cleaning, model training, default probability estimation and loan pricing.
 
 Risk_based_pricing.xlsm: A macro enabled Excel workbook in which data to train the model as well as new customer data can be entered, model output is also placed here, for details on the separate sheets, please see the #Implementation section below.
