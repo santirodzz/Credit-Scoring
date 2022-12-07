@@ -1,0 +1,15 @@
+
+Sub RunPythonScript()
+
+Dim objShell As Object
+Dim PythonExePath, PythonScriptPath As String
+
+    Set objShell = VBA.CreateObject("Wscript.Shell")
+    
+    PythonExePath = """C:\your path to python\python.exe"""
+    PythonScriptPath = "C:\your path to the excel file\Risk_based_pricing.py"
+    
+   objShell.Run PythonExePath & PythonScriptPath
+
+
+End Sub
