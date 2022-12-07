@@ -22,3 +22,13 @@ RFE (recursive feature elimination): This technique fits a model to the data (a 
 Business understanding: Since the dataset presented was relatively small, some of the results obtained did not make sense when compared to conventional financial theory. For instance, the model claimed that duration was not an important feauture, while it is well known that short term loans are less risky than long term loans, and default probability increases with time. Therefore, the results obtained from the previous procedures were constrated with financial theory and business understanding in order to make the final selection of feautres.
 
 # Model selection
+Since the output of the model is a binary variable (Default nor not) a logistic regression is a viable model, other classifiers like decession trees or random forests would also be possible alternatives, but were not in scope of this project. A more complex model would  involve Artificial Neural Networks, but it requires a large data set to be employed, a condition which is not fulfilled by the current dataframe.
+
+# Model tuning
+One of the biggest challenges of this project was dealing with a small dataset, the following ideas were tested aiming to improve the results obtained:
+
+Oversampling: The dataset is clearly inbalance, with defaults representing aroun 10% of the dataset. Using SMOTE (synthetic minority oversampling technique) new examples could be created based on existing examples. However, upon implementation the results obtained were not satisfactory as the model would estimate default probabilities close to 80% in some cases, which does not make sense in practice. A person with 80% of default probability would be in a precarious financial situation, but none of the customers of the business had such obvious financial issues. 
+
+Hyperparameter tuning: The logistic regression model in Python includes a parameter "C", which is a form of regularization. After testing for many values of C using gridsearch cross validation, the model seemed to favor higher values of C, meaning a model that overall is more likely to generalize future data, which is not a desirable feature in a model that aims to estimate default probabilities. Therefore, the default value of C=1.0 was chose instead. 
+
+# Model validation
