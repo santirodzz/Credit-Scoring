@@ -6,7 +6,7 @@ Risk_based_pricing.py: A python file which contains all the code regarding data 
 
 Risk_based_pricing.xlsm: A macro enabled Excel workbook in which data to train the model as well as new customer data can be entered, model output is also placed here, for details on the separate sheets, please see the #Implementation section below.
 
-
+VBA code (Run Python script).txt: A text file with the VBA code employed so that the python script could be run on Excel.
 
 
 # Data collection
