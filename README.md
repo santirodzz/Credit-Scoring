@@ -39,3 +39,20 @@ AUC ROC score: 0.88, indicating that the model is good at identifying correctly 
 F1 weighted score: F1 score is preferred in this example since the aim of the model is not to have overall correct estimates (such model would simply classify all customers as non defaults), but to minimize default customers being classified as non-defaults, also known as a false negative, a score of 0.79 is a good sign that the model is working correctly.
 
 New data: To test model coherence, data on imaginary customers was generated, the new customer data was passed to the model, ranking them from high to low default probability. The ranking was deemed as reasonable by the business as they mostly classified them in the same way (from less risky to more risky).
+
+# Risk based pricing
+Once default probabilites have bee estimated, it is possible to put a risk based ricing model into place, this model would acknowledge cost of funds, default premium, operative costs and a target profit margin in order to price the loans (set an adequate interest rate). The following parameters were needed in order to proceed:
+
+Cost of funds: Defined in this case as the "risk free" opportunity cost for the business, the rate chosen was the 10 year yield of colombian sovereign bonds (the country in which the business operates). To ensure that the risk free rate is up to date, the model obtains the latest quote from a website specialized in macroeconomic data.
+
+Recovery rate: Is defined as the percentage of funds that can be recovered once the customer is in default, the estimation of this parameter becomes complex once collaterals are added to the loan request, for simplicity, the business used historical data on its past transactions to determine a feasible level of recovery.
+
+Fees: In other words, transaction costs and other expenses directly related to loan disbursements. Estimated using historical business data.
+
+Base rate: Risk free rate + Default premium + Operative costs (Fees), this is the fair price of the loan, the minimum rate to be charged for the business to reach break even.
+
+Target profit: A spread over the base rate decided by the business, and affected by market conditions (competitors). 
+
+Annual interest rate: Base rate + Target profit, is the interest rate to be charged to the customer.
+
+# Implementation
