@@ -56,3 +56,12 @@ Target profit: A spread over the base rate decided by the business, and affected
 Annual interest rate: Base rate + Target profit, is the interest rate to be charged to the customer.
 
 # Implementation
+Once the model was approved, the next step was to make it user friendly and easy to handle by the business. By creating an excel file with the following sheets it wa ensured that the business would have no problems using the script on a daily basis:
+
+Data: A hidden sheet that contains the data used to train the model, with the pace of time as the number of loans increase, new information should be fed into this tab.
+
+Parameters: Includes recovery rate, fees and target profit margin.
+
+Customers: This is where new customer information can be entered, it also includes an "Estimate rates" button which triggers a VBA script that in turn runs the Python script.
+
+Loan pricing: This is where the model output is displayed.
